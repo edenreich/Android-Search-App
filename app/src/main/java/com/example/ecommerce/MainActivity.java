@@ -58,12 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
             if (mItems.contains(term)) {
                 mAdapter.getFilter().filter(term);
+                mAdapter.notifyDataSetChanged();
             } else {
                 mListView.setAdapter(mEmptyAdapter);
             }
-
-            mAdapter.notifyDataSetChanged();
-
+            
             return false;
         }
     };
